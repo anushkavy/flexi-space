@@ -6,6 +6,8 @@ body{
  font-family: "Inter", sans-serif;
 }
 
+/* nav */
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -45,14 +47,14 @@ nav{
     transform: translate(1px, 1px);
 }
 
+/* Home page */
+
 .home-container{
     background: url("./Images/HomePageImage.png") no-repeat center center;
     background-size: cover;
     color: white;
     padding: 45px 23px;
     height: 70vh;
-
-    
 }
 
 .home-main-img{
@@ -91,7 +93,6 @@ nav{
 
 /*** ABOUT PAGE ***/
 
-
 .about-page-hero{
 display: flex;
 padding: 5px 20px;
@@ -100,14 +101,12 @@ padding: 5px 20px;
 .about-hero-image {
     width: 100%;
     border-radius: 10px;
-    
 }
 
 .about-page-content {
     padding-inline: 23px;
     color: #161616;
     margin-bottom: 55px;
-    
 }
 
 .about-page-content h1 {
@@ -138,4 +137,91 @@ padding: 5px 20px;
     background-color: #161616;
     color: white;
     border-radius: 10px;
+}
+
+/* Explore Spaces */
+
+.space-list-container {
+    padding-inline: 30px;
+    margin-bottom: 20px;
+}
+
+.space-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 34px;
+    margin-top: 57px;
+}
+
+/* .space-tile a {
+    color: #161616;
+    text-decoration: none;    
+} */
+
+.space-tile img {
+    max-width: 100%;
+    border-radius: 7px;
+}
+
+.space-list-container button {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.space-price{
+    margin-bottom: 15px;
+}
+
+.space-type {
+    padding: 6px 26px;
+    height: 34px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .space-type:hover {
+    color: #FFEAD0;
+}
+
+.space-type:focus {
+    outline: none;
+}
+
+.space-type.selected {
+    color: #FFEAD0;
+} */
+
+.space-type.simple:hover, .space-type.simple.selected {
+    background-color: #E17654;
+}
+
+.space-type.rugged:hover, .space-type.rugged.selected {
+    background-color: #115E59;
+}
+
+.space-type.luxury:hover, .space-type.luxury.selected {
+    background-color: #161616;
+}
+
+.space-type.clear-filters {
+    margin-left: -20px;
+    /* height: 34px; */
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    /* border: none; */
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+}
+
+i[class*='space-type-'] {
+    padding: 7px 14px;
 }
