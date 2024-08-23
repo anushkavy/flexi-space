@@ -7,18 +7,14 @@ export default function ExploreSpaces() {
     <>
       <Navbar />
       <div className="home-container">
-        {/* <img
-          src={HomePageImage}
-          alt="Beautiful Creator Setups"
-          className="home-main-img"
-        /> */}
-
-        <h1>You got the Perfect Content, we got the Perfect Setup.</h1>
-        <p>
-          Add adventure to your life by joining the #vanlife movement. Rent the
-          perfect van to make your perfect road trip.
-        </p>
-        <Link to="vans">Explore Spaces</Link>
+        <div className="home-content">
+          <h1>You got the Perfect Content, we got the Perfect Setup.</h1>
+          <p>
+            Elevate your content by booking the perfect creative space. Turn
+            your vision into reality, one shoot at a time.
+          </p>
+          <Link to="/explore">Explore Spaces</Link>
+        </div>
       </div>
     </>
   );
