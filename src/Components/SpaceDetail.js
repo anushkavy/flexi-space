@@ -30,7 +30,11 @@ export default function SpaceDetail() {
 
           {/* Rest Information */}
 
-          <img src={space.imageUrl} alt={space.title} />
+          <img
+            src={space.imageUrl}
+            alt={space.title}
+            className={space.available ? "" : "notAvailable"}
+          />
           <span className="space-detail-rating">
             <FaStar className="star" />
             {space.rating}

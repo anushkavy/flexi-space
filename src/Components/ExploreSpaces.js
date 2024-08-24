@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import { FaStar } from "react-icons/fa";
 
 export default function ExploreSpaces() {
   const [spaces, setspaces] = useState([]);
@@ -13,17 +14,33 @@ export default function ExploreSpaces() {
 
   const spaceCard = spaces.map((space) => {
     return (
-      <Link to={`/explore/${space.id}`} key={space.id}>
+      <Link
+        to={`/explore/${space.id}`}
+        key={space.id}
+        className="explore-space-link"
+      >
         <div className="space-tile">
-          <img src={space.imageUrl} alt={space.title} />
+          <img
+            src={space.imageUrl}
+            alt={space.title}
+            className={space.available ? "" : "notAvailable"}
+          />
+          <span className="space-detail-rating">
+            <FaStar className="star" />
+            {space.rating}
+          </span>
           <div className="space-info">
             <h3>{space.title}</h3>
             <p className="space-price">
-              ${space.price}
-              <span>/day</span>
+              <span>${space.price}</span>/hour
             </p>
           </div>
-          <i className={`space-type ${space.type} selected`}>{space.type}</i>
+          <div className="space-detail-tags">
+            <i className={`space-type ${space.type} selected`}>{space.type}</i>
+            <i className={`space-type space-available`}>
+              {space.available ? "Available" : "Not Available"}
+            </i>
+          </div>
         </div>
       </Link>
     );
