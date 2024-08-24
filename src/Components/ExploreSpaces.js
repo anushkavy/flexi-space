@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default function ExploreSpaces() {
@@ -10,22 +11,21 @@ export default function ExploreSpaces() {
       .then((data) => setspaces(data.spaces));
   }, []);
 
-  console.log("spaces data", spaces);
-
   const spaceCard = spaces.map((space) => {
-    console.log(space.imageUrl);
     return (
-      <div key={space.id} className="space-tile">
-        <img src={space.imageUrl} alt={space.title} />
-        <div className="space-info">
-          <h3>{space.title}</h3>
-          <p className="space-price">
-            ${space.price}
-            <span>/day</span>
-          </p>
+      <Link to={`/explore/${space.id}`} key={space.id}>
+        <div className="space-tile">
+          <img src={space.imageUrl} alt={space.title} />
+          <div className="space-info">
+            <h3>{space.title}</h3>
+            <p className="space-price">
+              ${space.price}
+              <span>/day</span>
+            </p>
+          </div>
+          <i className={`space-type ${space.type} selected`}>{space.type}</i>
         </div>
-        <i className={`space-type ${space.type} selected`}>{space.type}</i>
-      </div>
+      </Link>
     );
   });
 
