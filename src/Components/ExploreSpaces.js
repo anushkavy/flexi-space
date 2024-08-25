@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 import { FaStar } from "react-icons/fa";
 
 export default function ExploreSpaces() {
@@ -48,7 +47,6 @@ export default function ExploreSpaces() {
 
   return (
     <>
-      <Navbar />
       <div className="space-list-container">
         <h1>Explore our space options</h1>
         <div className="space-list">{spaceCard}</div>

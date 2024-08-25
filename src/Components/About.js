@@ -1,11 +1,9 @@
-import Navbar from "./Navbar";
 import bgImg from "../Images/AboutPageImage.png";
 import { Link } from "react-router-dom";
 
 export default function About() {
   return (
     <>
-      <Navbar />
       <div className="about-page-container">
         <div className="about-page-hero">
           <img

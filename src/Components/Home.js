@@ -1,11 +1,8 @@
-import Navbar from "./Navbar";
-// import HomePageImage from "../Images/HomePageImage.png";
 import { Link } from "react-router-dom";
 
-export default function ExploreSpaces() {
+export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="home-container">
         <div className="home-content">
           <h1>You got the Perfect Content, we got the Perfect Setup.</h1>

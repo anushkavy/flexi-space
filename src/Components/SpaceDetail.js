@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import Navbar from "./Navbar";
 
 export default function SpaceDetail() {
   const Params = useParams();
@@ -19,7 +18,6 @@ export default function SpaceDetail() {
 
   return (
     <>
-      <Navbar />
       {space ? (
         <div className="space-detail">
           {/* Back to All Spaces Link */}

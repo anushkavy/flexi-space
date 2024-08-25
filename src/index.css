@@ -180,11 +180,9 @@ a{
     justify-items: center;
     gap: 34px;
     margin-top: 57px;
+    justify-content: space-around;
 }
 
-.space-tile{
-    
-}
 
 /* .space-tile a {
     color: #161616;
