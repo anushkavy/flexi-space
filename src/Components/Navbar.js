@@ -7,10 +7,13 @@ export default function Navbar() {
         <h1>FlexiSpace</h1>
       </Link>
       <div className="nav-content">
-        <Link to="/about" className=" nav-item nav-btn">
+        <Link to="/rentOut" className="nav-item nav-btn">
+          Rent Out Your Space
+        </Link>
+        <Link to="/about" className="nav-item nav-btn">
           About
         </Link>
-        <Link to="/explore" className=" nav-item nav-btn">
+        <Link to="/explore" className="nav-item nav-btn">
           Explore Spaces
         </Link>
       </div>
