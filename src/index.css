@@ -2,6 +2,12 @@
     margin: 0;
 }
 
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 body{
  font-family: "Inter", sans-serif;
 }
@@ -19,7 +25,7 @@ nav{
     padding: 20px;
     font-weight: 900;
     font-size: 18px;
-    
+    height: fit-content;
 }
 
 .nav-content{
@@ -49,7 +55,9 @@ nav{
     padding: 45px 23px;
     min-height: 73vh;
     position: relative;
-    width: 97vw;
+    width: 100vw;
+    box-sizing: border-box;
+    flex-grow: 1;
 }
 
 .home-content{
@@ -66,7 +74,7 @@ nav{
 }
 
 .home-main-img{
-    width: 97vw;
+    width: 100vw;
 }
 
 .home-container h1 {
