@@ -26,7 +26,6 @@ nav{
     font-weight: 900;
     font-size: 18px;
     height: fit-content;
-    width: 100vw;
     box-sizing: border-box;
 }
 
@@ -61,7 +60,6 @@ nav{
     background-size: cover;
     color: white;
     padding: 45px 23px;
-    min-height: 73vh;
     position: relative;
     width: 100vw;
     box-sizing: border-box;
@@ -275,6 +273,7 @@ i[class*='space-type-'] {
 }
 
 /* Space Details */
+
 .space-detail{
     display: flex;
     flex-direction: column;
@@ -282,9 +281,8 @@ i[class*='space-type-'] {
     align-items: flex-start;
     margin: 20px 0 20px 0;
     position: absolute;
-    /* top: 50%; */
     left: 50%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
 }
 
 
@@ -415,4 +413,24 @@ i[class*='space-type-'] {
     background-color: #FF8C38;
     width: 80%;
     margin-bottom: 15px;
+}
+
+/* Rent Out Page */
+
+.rentOut-nav{
+    font-weight: 500;
+    font-size: 16px;
+    justify-content: flex-start;
+    column-gap: 100px;
+}
+
+.rentOut-nav a{
+    padding: 10px;
+    color: #4D4D4D;
+}
+
+.rentOut-nav a:hover {
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 600;
 }
