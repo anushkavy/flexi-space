@@ -53,6 +53,19 @@ nav{
     color: #FF8C38;
 }
 
+/* Footer */
+footer{
+    font-size: 14px;
+    font-weight: 500;
+    color: #AAAAAA;
+    width: 100%;
+    text-align: center;
+    background: #252525;
+    padding: 10px;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
 /* Home page */
 
 .home-container{
