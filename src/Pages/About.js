@@ -8,7 +8,7 @@ export default function About() {
         <div className="about-page-hero">
           <img
             src={bgImg}
-            className="about-hero-image"
+            className="about-page-image"
             alt="A beautiful setup"
           />
           <div className="about-page-content">

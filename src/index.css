@@ -58,6 +58,20 @@ nav{
     color: #FF8C38;
 }
 
+@media (max-width: 455px) {
+    nav {
+            padding: 7px;
+            font-weight: 900;
+            font-size: 16px;
+        }
+    
+    .nav-content {
+        font-weight: 600;
+        font-size: 14px;
+        }
+   
+}
+
 /* Footer */
 footer{
     font-size: 14px;
@@ -139,29 +153,30 @@ footer{
 /*** ABOUT PAGE ***/
 
 .about-page-hero{
-display: flex;
-padding: 5px 20px;
+    display: flex;
+    padding: 5px 20px;
+    column-gap: 20px;
+    margin-bottom: 20px;
 }
 
-.about-hero-image {
+.about-page-image {
     width: 100%;
     border-radius: 10px;
 }
 
 .about-page-content {
-    padding-inline: 23px;
+    padding-inline: 5px;
     color: #161616;
-    margin-bottom: 55px;
 }
 
 .about-page-content h1 {
-    line-height: 48px;
+    line-height: 120%;
     font-size: 40px;
     margin-bottom: 20px;
 }
 
 .about-page-content p {
-    line-height: 22px;
+    line-height: 150%;
 }
 
 .about-page-cta {
@@ -171,6 +186,7 @@ padding: 5px 20px;
     padding-bottom: 32px;
     margin-inline: 27px;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .about-page-cta h2 {
@@ -182,6 +198,18 @@ padding: 5px 20px;
     background-color: #161616;
     color: white;
     border-radius: 10px;
+}
+
+@media (max-width: 455px){
+    .about-page-hero{
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .about-page-content h1{
+        font-size: 26px;
+        line-height: 120%;
+    }
 }
 
 /* Explore Spaces */
@@ -287,6 +315,16 @@ a {
 
 i[class*='space-type-'] {
     padding: 7px 14px;
+}
+
+@media (max-width: 455px){
+    .space-list-container h1{
+        font-size: 25px;
+    }
+
+    .space-list{
+        margin-top: 25px;
+    }
 }
 
 /* Space Details */
