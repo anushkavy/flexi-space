@@ -25,6 +25,7 @@ createServer({
       parking: "Street parking available",
       accessibility: "Wheelchair accessible",
       rating: 4.8,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -46,6 +47,7 @@ createServer({
       parking: "Private parking lot",
       accessibility: "Not wheelchair accessible",
       rating: 4.5,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -67,6 +69,7 @@ createServer({
       parking: "Street parking only",
       accessibility: "Wheelchair accessible",
       rating: 4.7,
+      hostId: "456",
     });
 
     server.create("space", {
@@ -88,6 +91,7 @@ createServer({
       parking: "On-site parking available",
       accessibility: "Partially accessible",
       rating: 4.9,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -109,6 +113,7 @@ createServer({
       parking: "Paid garage nearby",
       accessibility: "Wheelchair accessible",
       rating: 4.8,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -130,6 +135,7 @@ createServer({
       parking: "On-site parking available",
       accessibility: "Not wheelchair accessible",
       rating: 4.6,
+      hostId: "789",
     });
 
     server.create("space", {
@@ -151,6 +157,7 @@ createServer({
       parking: "Street parking available",
       accessibility: "Not wheelchair accessible",
       rating: 4.7,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -172,6 +179,7 @@ createServer({
       parking: "Paid parking nearby",
       accessibility: "Wheelchair accessible",
       rating: 4.9,
+      hostId: "123",
     });
 
     server.create("space", {
@@ -193,6 +201,7 @@ createServer({
       parking: "On-site parking available",
       accessibility: "Wheelchair accessible",
       rating: 4.8,
+      hostId: "456",
     });
 
     server.create("space", {
@@ -214,6 +223,7 @@ createServer({
       parking: "Street parking available",
       accessibility: "Not wheelchair accessible",
       rating: 4.7,
+      hostId: "123",
     });
   },
 
@@ -228,6 +238,17 @@ createServer({
     this.get("/spaces/:id", (schema, request) => {
       const id = request.params.id;
       return schema.spaces.find(id);
+    });
+
+    this.get("/host/spaces", (schema, request) => {
+      // Hard-code the hostId for now
+      return schema.spaces.where({ hostId: "123" });
+    });
+
+    this.get("/host/spaces/:id", (schema, request) => {
+      // Hard-code the hostId for now
+      const id = request.params.id;
+      return schema.spaces.where({ id, hostId: "123" });
     });
   },
 });

@@ -28,12 +28,10 @@ export default function ExploreSpaces() {
             <FaStar className="star" />
             {space.rating}
           </span>
-          <div className="space-info">
-            <h3>{space.title}</h3>
-            <p className="space-price">
-              <span>${space.price}</span>/hour
-            </p>
-          </div>
+          <h3>{space.title}</h3>
+          <p className="space-price">
+            <span>${space.price}</span>/hour
+          </p>
           <div className="space-detail-tags">
             <i className={`space-type ${space.type} selected`}>{space.type}</i>
             <i className={`space-type space-available`}>
@@ -46,11 +44,9 @@ export default function ExploreSpaces() {
   });
 
   return (
-    <>
-      <div className="space-list-container">
-        <h1>Explore our space options</h1>
-        <div className="space-list">{spaceCard}</div>
-      </div>
-    </>
+    <div className="space-list-container">
+      <h1>Explore our space options</h1>
+      <div className="space-list">{spaceCard}</div>
+    </div>
   );
 }

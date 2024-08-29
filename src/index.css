@@ -10,6 +10,7 @@
 
 body{
  font-family: "Inter", sans-serif;
+ background: #FFF7ED;
 }
 
 .notAvailable{
@@ -53,12 +54,15 @@ nav{
     color: #FF8C38;
 }
 
+.nav-btn-selected{
+    color: #FF8C38;
+}
+
 /* Footer */
 footer{
     font-size: 14px;
     font-weight: 500;
     color: #AAAAAA;
-    width: 100%;
     text-align: center;
     background: #252525;
     padding: 10px;
@@ -182,39 +186,39 @@ padding: 5px 20px;
 
 /* Explore Spaces */
 
-.explore-space-link{
-text-decoration: none;
-color: initial;
-width: fit-content;
-max-width: 30%;
-min-width: 300px;
-}
-
-a{
-    text-decoration: none;
-    color: initial;
-}
-
 .space-list-container {
     padding-inline: 30px;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    background: #FFF7ED;
 }
 
 .space-list {
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    justify-items: center;
-    gap: 34px;
+    justify-content: space-between;
+    row-gap: 15px;
     margin-top: 57px;
-    justify-content: space-around;
 }
 
+.explore-space-link {
+    text-decoration: none;
+    color: initial;
+    width: fit-content;
+    max-width: 30%;
+    min-width: 300px;
+    margin-bottom: 15px;
+}
 
-/* .space-tile a {
-    color: #161616;
-    text-decoration: none;    
-} */
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.space-tile{
+    padding: 15px;
+    border-radius: 7px;
+    background: white;
+}
 
 .space-tile img {
     max-width: 100%;
@@ -428,13 +432,13 @@ i[class*='space-type-'] {
     margin-bottom: 15px;
 }
 
-/* Rent Out Page */
+/* Rent Out Layout */
 
 .rentOut-nav{
     font-weight: 500;
     font-size: 16px;
-    justify-content: flex-start;
-    column-gap: 100px;
+    justify-content: space-between;
+    width: 60%;
 }
 
 .rentOut-nav a{
@@ -446,4 +450,46 @@ i[class*='space-type-'] {
     color: #161616;
     text-decoration: underline;
     font-weight: 600;
+}
+
+.rentOut-nav-selected{
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* RentOut/ Host-Spaces-Page  */
+
+
+.host-space-link{
+    text-decoration: none;
+    color: initial;
+    width: fit-content;
+    width: 48%;
+    min-width: 300px;
+    /* max-width: 40%; */
+}
+
+.host-space-tile{
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: white;
+    column-gap: 7px;
+}
+
+.host-space-img{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.host-space-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 7px;
+}
+
+.host-space-info h3{
+    font-size: 16px;
 }

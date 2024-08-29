@@ -7,6 +7,8 @@ import SpaceDetail from "./Pages/SpaceDetail";
 import Layout from "./Components/Layout";
 import Dashboard from "./Pages/RentOut/Dashboard";
 import Income from "./Pages/RentOut/Income";
+import YourSpaces from "./Pages/RentOut/HostSpaces";
+import YourSpaceDetail from "./Pages/RentOut/HostSpaceDetail";
 import Reviews from "./Pages/RentOut/Reviews";
 import RentOutLayout from "./Components/RentOutLayout";
 
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="rentOut" element={<RentOutLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
+            <Route path="spaces" element={<YourSpaces />} />
+            <Route path="spaces/:id" element={<YourSpaceDetail />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
