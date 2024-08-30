@@ -1,10 +1,10 @@
 import { Outlet, NavLink } from "react-router-dom";
 export default function RentOutLayout() {
   return (
-    <>
+    <div className="rent-out-layout">
       <nav className="rentOut-nav">
         <NavLink
-          to="/rentOut"
+          to="."
           end
           className={({ isActive }) => {
             return isActive ? "rentOut-nav-selected" : null;
@@ -13,7 +13,7 @@ export default function RentOutLayout() {
           Dashboard
         </NavLink>
         <NavLink
-          to="/rentOut/income"
+          to="income"
           className={({ isActive }) => {
             return isActive ? "rentOut-nav-selected" : null;
           }}
@@ -21,7 +21,7 @@ export default function RentOutLayout() {
           Income
         </NavLink>
         <NavLink
-          to="/rentOut/spaces"
+          to="spaces"
           className={({ isActive }) => {
             return isActive ? "rentOut-nav-selected" : null;
           }}
@@ -29,7 +29,7 @@ export default function RentOutLayout() {
           Your Spaces
         </NavLink>
         <NavLink
-          to="/rentOut/reviews"
+          to="reviews"
           className={({ isActive }) => {
             return isActive ? "rentOut-nav-selected" : null;
           }}
@@ -38,6 +38,6 @@ export default function RentOutLayout() {
         </NavLink>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 }

@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav>
-      <NavLink to="/" className="nav-item">
+      <NavLink to="." className="nav-item">
         <h1>FlexiSpace</h1>
       </NavLink>
       <div className="nav-content">
         <NavLink
-          to="/rentOut"
+          to="rentOut"
           className={({ isActive }) => {
             return isActive
               ? "nav-item nav-btn nav-btn-selected"
@@ -18,7 +18,7 @@ export default function Navbar() {
           Rent Out Your Space
         </NavLink>
         <NavLink
-          to="/about"
+          to="about"
           className={({ isActive }) => {
             return isActive
               ? "nav-item nav-btn nav-btn-selected"
@@ -28,7 +28,7 @@ export default function Navbar() {
           About
         </NavLink>
         <NavLink
-          to="/explore"
+          to="explore"
           className={({ isActive }) => {
             return isActive
               ? "nav-item nav-btn nav-btn-selected"

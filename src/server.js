@@ -240,15 +240,15 @@ createServer({
       return schema.spaces.find(id);
     });
 
-    this.get("/host/spaces", (schema, request) => {
+    this.get("/rentOut/spaces", (schema, request) => {
       // Hard-code the hostId for now
       return schema.spaces.where({ hostId: "123" });
     });
 
-    this.get("/host/spaces/:id", (schema, request) => {
+    this.get("/rentOut/spaces/:id", (schema, request) => {
       // Hard-code the hostId for now
       const id = request.params.id;
-      return schema.spaces.where({ id, hostId: "123" });
+      return schema.spaces.findBy({ id, hostId: "123" });
     });
   },
 });

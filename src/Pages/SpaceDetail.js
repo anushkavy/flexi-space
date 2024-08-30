@@ -20,7 +20,7 @@ export default function SpaceDetail() {
         <div className="space-detail-container">
           <div className="space-detail">
             {/* Back to All Spaces Link */}
-            <Link to="/explore">
+            <Link to=".." relative="path">
               <FaArrowLeft className="space-detail-faIcon" />
               <span className="space-detail-backLink">Back to all spaces </span>
             </Link>
