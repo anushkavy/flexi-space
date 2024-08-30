@@ -64,7 +64,9 @@ export default function HostSpaceDetailLayout() {
                   to="."
                   end
                   className={({ isActive }) => {
-                    return isActive ? "rentOut-nav-selected" : null;
+                    return isActive
+                      ? "rentOut-nav-selected"
+                      : "rentOut-nav-item";
                   }}
                 >
                   Details
@@ -73,7 +75,9 @@ export default function HostSpaceDetailLayout() {
                 <NavLink
                   to="pricing"
                   className={({ isActive }) => {
-                    return isActive ? "rentOut-nav-selected" : null;
+                    return isActive
+                      ? "rentOut-nav-selected"
+                      : "rentOut-nav-item";
                   }}
                 >
                   Pricing
@@ -82,7 +86,9 @@ export default function HostSpaceDetailLayout() {
                 <NavLink
                   to="photos"
                   className={({ isActive }) => {
-                    return isActive ? "rentOut-nav-selected" : null;
+                    return isActive
+                      ? "rentOut-nav-selected"
+                      : "rentOut-nav-item";
                   }}
                 >
                   Photos

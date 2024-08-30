@@ -7,7 +7,7 @@ export default function RentOutLayout() {
           to="."
           end
           className={({ isActive }) => {
-            return isActive ? "rentOut-nav-selected" : null;
+            return isActive ? "rentOut-nav-selected" : "rentOut-nav-item";
           }}
         >
           Dashboard
@@ -15,7 +15,7 @@ export default function RentOutLayout() {
         <NavLink
           to="income"
           className={({ isActive }) => {
-            return isActive ? "rentOut-nav-selected" : null;
+            return isActive ? "rentOut-nav-selected" : "rentOut-nav-item";
           }}
         >
           Income
@@ -23,7 +23,7 @@ export default function RentOutLayout() {
         <NavLink
           to="spaces"
           className={({ isActive }) => {
-            return isActive ? "rentOut-nav-selected" : null;
+            return isActive ? "rentOut-nav-selected" : "rentOut-nav-item";
           }}
         >
           Your Spaces
@@ -31,7 +31,7 @@ export default function RentOutLayout() {
         <NavLink
           to="reviews"
           className={({ isActive }) => {
-            return isActive ? "rentOut-nav-selected" : null;
+            return isActive ? "rentOut-nav-selected" : "rentOut-nav-item";
           }}
         >
           Reviews
