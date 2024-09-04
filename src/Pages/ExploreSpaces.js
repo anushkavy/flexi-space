@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 export default function ExploreSpaces() {
   const [spaces, setspaces] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const typeFilter = searchParams.get("typeFilter");
 
   useEffect(() => {
     fetch("/api/spaces")
@@ -11,7 +14,13 @@ export default function ExploreSpaces() {
       .then((data) => setspaces(data.spaces));
   }, []);
 
-  const spaceCard = spaces.map((space) => {
+  const displayedSpaces = typeFilter
+    ? spaces.filter(
+        (space) => space.type.toLowerCase().split(" ").join("") === typeFilter
+      )
+    : spaces;
+
+  const spaceCard = displayedSpaces.map((space) => {
     return (
       <Link
         to={`/explore/${space.id}`}

@@ -36,7 +36,7 @@ createServer({
         "A small, cozy studio perfect for intimate photo shoots and content creation.",
       imageUrl:
         "https://images.pexels.com/photos/3316922/pexels-photo-3316922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Semi-Furnished",
+      type: "Semi Furnished",
       address: "456 Elm St, Los Angeles, CA 90001",
       available: true,
       availabilityTimings: "9 AM - 6 PM",
