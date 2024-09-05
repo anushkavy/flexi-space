@@ -223,12 +223,29 @@ footer{
     align-items: center;
 }
 
+.space-list-filters{
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.space-list-filters button{
+    margin-bottom: 0;
+    background-color: #FFEAD0;
+        color: #4D4D4D ;
+}
+
 .space-list {
-    margin-top: 57px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-auto-rows: 1fr;
     gap: 15px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .explore-space-link {
@@ -256,17 +273,13 @@ a {
     aspect-ratio: 4/2.5;
 }
 
-.space-list-container button {
-    margin-right: 20px;
-    cursor: pointer;
-}
 
 .space-price{
     margin-bottom: 15px;
 }
 
 .space-type {
-    padding: 7px 15px;
+    padding: 8px 12px;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -279,9 +292,10 @@ a {
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-/* .space-type:hover {
+.space-type:hover {
     color: #FFEAD0;
 }
 
@@ -291,18 +305,30 @@ a {
 
 .space-type.selected {
     color: #FFEAD0;
-} */
-
-.space-type.simple:hover, .space-type.simple.selected {
-    background-color: #E17654;
 }
 
-.space-type.rugged:hover, .space-type.rugged.selected {
+.space-type.fullyFurnished:hover, .space-type.fullyFurnished.selected {
+    background-color: #ea5123;
+}
+
+.space-type.semiFurnished:hover, .space-type.semiFurnished.selected {
     background-color: #115E59;
 }
 
-.space-type.luxury:hover, .space-type.luxury.selected {
+.space-type.lightlyDecorated:hover, .space-type.lightlyDecorated.selected {
     background-color: #161616;
+}
+
+.space-type.naturallyDecorated:hover, .space-type.naturallyDecorated.selected {
+    background-color: #3f924b;
+}
+
+.space-type.rawSpace:hover, .space-type.rawSpace.selected {
+    background-color: #5e7eb1;
+}
+
+.space-type.artfullyDecorated:hover, .space-type.artfullyDecorated.selected {
+    background-color: #ca6a9f;
 }
 
 .space-type.clear-filters {

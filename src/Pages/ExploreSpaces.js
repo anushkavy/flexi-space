@@ -6,7 +6,8 @@ export default function ExploreSpaces() {
   const [spaces, setspaces] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const typeFilter = searchParams.get("typeFilter");
+  const typeFilter = searchParams.get("type");
+  const availabilityFilter = searchParams.get("availability");
 
   useEffect(() => {
     fetch("/api/spaces")
@@ -14,11 +15,18 @@ export default function ExploreSpaces() {
       .then((data) => setspaces(data.spaces));
   }, []);
 
-  const displayedSpaces = typeFilter
-    ? spaces.filter(
-        (space) => space.type.toLowerCase().split(" ").join("") === typeFilter
-      )
-    : spaces;
+  let displayedSpaces = spaces;
+
+  if (spaces && typeFilter) {
+    displayedSpaces = displayedSpaces.filter(
+      (space) => space.type.toLowerCase().split(" ").join("") === typeFilter
+    );
+  }
+  if (spaces && availabilityFilter) {
+    displayedSpaces = displayedSpaces.filter(
+      (space) => space.available.toString() === availabilityFilter
+    );
+  }
 
   const spaceCard = displayedSpaces.map((space) => {
     return (
@@ -52,9 +60,96 @@ export default function ExploreSpaces() {
     );
   });
 
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+
+      return prevParams;
+    });
+  }
+
   return (
     <div className="space-list-container">
       <h1>Explore our space options</h1>
+      <div className="space-list-filters">
+        <button
+          className={`space-type fullyFurnished`}
+          onClick={() => {
+            handleFilterChange("type", "fullyfurnished");
+          }}
+        >
+          Fully Furnished
+        </button>
+        <button
+          className={`space-type semiFurnished`}
+          onClick={() => {
+            handleFilterChange("type", "semifurnished");
+          }}
+        >
+          Semi Furnished
+        </button>
+        <button
+          className={`space-type lightlyDecorated`}
+          onClick={() => {
+            handleFilterChange("type", "lightlydecorated");
+          }}
+        >
+          Lightly Decorated
+        </button>
+        <button
+          className={`space-type naturallyDecorated`}
+          onClick={() => {
+            handleFilterChange("type", "naturallydecorated");
+          }}
+        >
+          Naturally Decorated
+        </button>
+        <button
+          className={`space-type rawSpace`}
+          onClick={() => {
+            handleFilterChange("type", "rawspace");
+          }}
+        >
+          Raw Space
+        </button>
+        <button
+          className={`space-type artfullyDecorated`}
+          onClick={() => {
+            handleFilterChange("type", "artfullydecorated");
+          }}
+        >
+          Artfully Decorated
+        </button>
+        <button
+          className={`space-type lightlyDecorated`}
+          onClick={() => {
+            handleFilterChange("availability", true);
+          }}
+        >
+          Available
+        </button>
+        <button
+          className={`space-type lightlyDecorated`}
+          onClick={() => {
+            handleFilterChange("availability", false);
+          }}
+        >
+          Not Available
+        </button>
+        <button
+          className={`space-type clear-filters`}
+          onClick={() => {
+            handleFilterChange("type", null);
+            handleFilterChange("availability", null);
+          }}
+        >
+          Clear Filters
+        </button>
+      </div>
       <div className="space-list">{spaceCard}</div>
     </div>
   );

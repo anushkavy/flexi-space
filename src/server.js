@@ -14,7 +14,7 @@ createServer({
         "A spacious and modern loft with large windows, perfect for photo shoots and video content.",
       imageUrl:
         "https://images.pexels.com/photos/6044445/pexels-photo-6044445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Fully Equipped",
+      type: "Fully Furnished",
       address: "123 Maple St, New York, NY 10001",
       available: true,
       availabilityTimings: "8 AM - 8 PM",
@@ -36,7 +36,7 @@ createServer({
         "A small, cozy studio perfect for intimate photo shoots and content creation.",
       imageUrl:
         "https://images.pexels.com/photos/3316922/pexels-photo-3316922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Semi Furnished",
+      type: "Lightly Decorated",
       address: "456 Elm St, Los Angeles, CA 90001",
       available: true,
       availabilityTimings: "9 AM - 6 PM",
@@ -58,7 +58,7 @@ createServer({
         "A clean, minimalist space ideal for modern content creation with a focus on simplicity.",
       imageUrl:
         "https://images.pexels.com/photos/112474/pexels-photo-112474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Lightly Decorated",
+      type: "Semi Furnished",
       address: "789 Oak St, San Francisco, CA 94102",
       available: false,
       availabilityTimings: "10 AM - 5 PM",
@@ -102,7 +102,7 @@ createServer({
         "A chic loft in the heart of downtown, great for high-end content creation.",
       imageUrl:
         "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Fully Furnished",
+      type: "Lightly Decorated",
       address: "654 Cedar St, Chicago, IL 60601",
       available: false,
       availabilityTimings: "8 AM - 10 PM",
@@ -145,8 +145,8 @@ createServer({
       description:
         "A rooftop terrace with a view, perfect for artistic and scenic content.",
       imageUrl:
-        "https://images.pexels.com/photos/271815/pexels-photo-271815.jpeg",
-      type: "Lightly Furnished",
+        "https://images.pexels.com/photos/271815/pexels-photo-271815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      type: "Semi Furnished",
       address: "159 Skyway Dr, Miami, FL 33101",
       available: true,
       availabilityTimings: "5 AM - 8 PM",
@@ -190,7 +190,7 @@ createServer({
         "A sleek, modern office space ideal for professional content creation.",
       imageUrl:
         "https://images.pexels.com/photos/260931/pexels-photo-260931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      type: "Fully Equipped",
+      type: "Fully Furnished",
       address: "753 Corporate Blvd, Seattle, WA 98101",
       available: true,
       availabilityTimings: "7 AM - 7 PM",
