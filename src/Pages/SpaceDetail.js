@@ -16,14 +16,9 @@ export default function SpaceDetail() {
   }, [Params.id]);
 
   const search = location.state?.search || "";
+  const type = location.state?.type || "";
 
-  const spaceNameEl =
-    search === "?"
-      ? ""
-      : search
-          .split("?type=")[1]
-          ?.split("&")[0]
-          .split(/(?=[A-Z])/) || "";
+  const spaceNameEl = type === "" ? "" : type.split(/(?=[A-Z])/);
 
   const spaceName =
     spaceNameEl === ""

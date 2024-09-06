@@ -37,7 +37,7 @@ export default function ExploreSpaces() {
     return (
       <Link
         to={space.id}
-        state={{ search: `?${searchParams.toString()}` }}
+        state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
         key={space.id}
         className="explore-space-link"
       >
