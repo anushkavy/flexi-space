@@ -12,11 +12,7 @@ export default function YourSpaces() {
 
   const spaceCard = hostSpaces.map((space) => {
     return (
-      <Link
-        to={`/rentOut/spaces/${space.id}`}
-        key={space.id}
-        className="host-space-link"
-      >
+      <Link to={space.id} key={space.id} className="host-space-link">
         <div className="host-space-tile">
           <img
             src={space.imageUrl}

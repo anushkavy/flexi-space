@@ -230,12 +230,13 @@ footer{
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
     flex-wrap: wrap;
+    grid-auto-rows: 1fr
 }
 
 .space-list-filters button{
     margin-bottom: 0;
     background-color: #FFEAD0;
-        color: #4D4D4D ;
+    color: #4D4D4D ;
 }
 
 .space-list {
@@ -295,19 +296,12 @@ a {
     justify-content: center;
 }
 
-.space-type:hover {
+.filterBtn:hover, .filterBtn.selected {
     color: #FFEAD0;
+    background-color: #161616;
 }
 
-.space-type:focus {
-    outline: none;
-}
-
-.space-type.selected {
-    color: #FFEAD0;
-}
-
-.space-type.fullyFurnished:hover, .space-type.fullyFurnished.selected {
+/* .space-type.fullyFurnished:hover, .space-type.fullyFurnished.selected {
     background-color: #ea5123;
 }
 
@@ -329,10 +323,10 @@ a {
 
 .space-type.artfullyDecorated:hover, .space-type.artfullyDecorated.selected {
     background-color: #ca6a9f;
-}
+} */
 
 .space-type.clear-filters {
-    margin-left: -20px;
+    margin-left: -50px;
     /* height: 34px; */
     padding: 6px 26px;
     font-style: normal;

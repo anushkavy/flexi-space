@@ -30,11 +30,7 @@ export default function ExploreSpaces() {
 
   const spaceCard = displayedSpaces.map((space) => {
     return (
-      <Link
-        to={`/explore/${space.id}`}
-        key={space.id}
-        className="explore-space-link"
-      >
+      <Link to={space.id} key={space.id} className="explore-space-link">
         <div className="space-tile">
           <img
             src={space.imageUrl}
@@ -77,7 +73,9 @@ export default function ExploreSpaces() {
       <h1>Explore our space options</h1>
       <div className="space-list-filters">
         <button
-          className={`space-type fullyFurnished`}
+          className={`space-type filterBtn fullyFurnished ${
+            typeFilter === "fullyfurnished" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "fullyfurnished");
           }}
@@ -85,7 +83,9 @@ export default function ExploreSpaces() {
           Fully Furnished
         </button>
         <button
-          className={`space-type semiFurnished`}
+          className={`space-type filterBtn semiFurnished ${
+            typeFilter === "semifurnished" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "semifurnished");
           }}
@@ -93,7 +93,9 @@ export default function ExploreSpaces() {
           Semi Furnished
         </button>
         <button
-          className={`space-type lightlyDecorated`}
+          className={`space-type filterBtn lightlyDecorated ${
+            typeFilter === "lightlydecorated" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "lightlydecorated");
           }}
@@ -101,7 +103,9 @@ export default function ExploreSpaces() {
           Lightly Decorated
         </button>
         <button
-          className={`space-type naturallyDecorated`}
+          className={`space-type filterBtn naturallyDecorated ${
+            typeFilter === "naturallydecorated" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "naturallydecorated");
           }}
@@ -109,7 +113,9 @@ export default function ExploreSpaces() {
           Naturally Decorated
         </button>
         <button
-          className={`space-type rawSpace`}
+          className={`space-type filterBtn rawSpace ${
+            typeFilter === "rawspace" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "rawspace");
           }}
@@ -117,7 +123,9 @@ export default function ExploreSpaces() {
           Raw Space
         </button>
         <button
-          className={`space-type artfullyDecorated`}
+          className={`space-type filterBtn artfullyDecorated ${
+            typeFilter === "artfullydecorated" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("type", "artfullydecorated");
           }}
@@ -125,7 +133,9 @@ export default function ExploreSpaces() {
           Artfully Decorated
         </button>
         <button
-          className={`space-type lightlyDecorated`}
+          className={`space-type filterBtn lightlyDecorated ${
+            availabilityFilter === "true" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("availability", true);
           }}
@@ -133,22 +143,26 @@ export default function ExploreSpaces() {
           Available
         </button>
         <button
-          className={`space-type lightlyDecorated`}
+          className={`space-type filterBtn lightlyDecorated ${
+            availabilityFilter === "false" ? "selected" : null
+          }`}
           onClick={() => {
             handleFilterChange("availability", false);
           }}
         >
           Not Available
         </button>
-        <button
-          className={`space-type clear-filters`}
-          onClick={() => {
-            handleFilterChange("type", null);
-            handleFilterChange("availability", null);
-          }}
-        >
-          Clear Filters
-        </button>
+        {(typeFilter || availabilityFilter) && (
+          <button
+            className={`space-type clear-filters`}
+            onClick={() => {
+              handleFilterChange("type", null);
+              handleFilterChange("availability", null);
+            }}
+          >
+            Clear Filters
+          </button>
+        )}
       </div>
       <div className="space-list">{spaceCard}</div>
     </div>
