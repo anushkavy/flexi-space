@@ -18,9 +18,14 @@ export default function ExploreSpaces() {
   let displayedSpaces = spaces;
 
   if (spaces && typeFilter) {
-    displayedSpaces = displayedSpaces.filter(
-      (space) => space.type.toLowerCase().split(" ").join("") === typeFilter
-    );
+    displayedSpaces = displayedSpaces.filter((space) => {
+      let spaceTypeEl = space.type.toLowerCase().split(" ");
+      spaceTypeEl =
+        spaceTypeEl[0] +
+        spaceTypeEl[1].charAt(0).toUpperCase() +
+        spaceTypeEl[1].slice(1);
+      return typeFilter === spaceTypeEl;
+    });
   }
   if (spaces && availabilityFilter) {
     displayedSpaces = displayedSpaces.filter(
@@ -30,7 +35,12 @@ export default function ExploreSpaces() {
 
   const spaceCard = displayedSpaces.map((space) => {
     return (
-      <Link to={space.id} key={space.id} className="explore-space-link">
+      <Link
+        to={space.id}
+        state={{ search: `?${searchParams.toString()}` }}
+        key={space.id}
+        className="explore-space-link"
+      >
         <div className="space-tile">
           <img
             src={space.imageUrl}
@@ -74,60 +84,60 @@ export default function ExploreSpaces() {
       <div className="space-list-filters">
         <button
           className={`space-type filterBtn fullyFurnished ${
-            typeFilter === "fullyfurnished" ? "selected" : null
+            typeFilter === "fullyFurnished" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "fullyfurnished");
+            handleFilterChange("type", "fullyFurnished");
           }}
         >
           Fully Furnished
         </button>
         <button
           className={`space-type filterBtn semiFurnished ${
-            typeFilter === "semifurnished" ? "selected" : null
+            typeFilter === "semiFurnished" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "semifurnished");
+            handleFilterChange("type", "semiFurnished");
           }}
         >
           Semi Furnished
         </button>
         <button
           className={`space-type filterBtn lightlyDecorated ${
-            typeFilter === "lightlydecorated" ? "selected" : null
+            typeFilter === "lightlyDecorated" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "lightlydecorated");
+            handleFilterChange("type", "lightlyDecorated");
           }}
         >
           Lightly Decorated
         </button>
         <button
           className={`space-type filterBtn naturallyDecorated ${
-            typeFilter === "naturallydecorated" ? "selected" : null
+            typeFilter === "naturallyDecorated" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "naturallydecorated");
+            handleFilterChange("type", "naturallyDecorated");
           }}
         >
           Naturally Decorated
         </button>
         <button
           className={`space-type filterBtn rawSpace ${
-            typeFilter === "rawspace" ? "selected" : null
+            typeFilter === "rawSpace" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "rawspace");
+            handleFilterChange("type", "rawSpace");
           }}
         >
           Raw Space
         </button>
         <button
           className={`space-type filterBtn artfullyDecorated ${
-            typeFilter === "artfullydecorated" ? "selected" : null
+            typeFilter === "artfullyDecorated" ? "selected" : null
           }`}
           onClick={() => {
-            handleFilterChange("type", "artfullydecorated");
+            handleFilterChange("type", "artfullyDecorated");
           }}
         >
           Artfully Decorated

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { FaStar } from "react-icons/fa";
 export default function SpaceDetail() {
   const Params = useParams();
   const [space, setSpace] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     fetch(`/api/spaces/${Params.id}`)
@@ -14,15 +15,36 @@ export default function SpaceDetail() {
       .then((data) => setSpace(data.spaces));
   }, [Params.id]);
 
+  const search = location.state?.search || "";
+
+  const spaceNameEl =
+    search === "?"
+      ? ""
+      : search
+          .split("?type=")[1]
+          ?.split("&")[0]
+          .split(/(?=[A-Z])/) || "";
+
+  const spaceName =
+    spaceNameEl === ""
+      ? "All Spaces"
+      : spaceNameEl[0].charAt(0).toUpperCase() +
+        spaceNameEl[0].slice(1) +
+        " " +
+        spaceNameEl[1] +
+        " Spaces";
+
   return (
     <>
       {space ? (
         <div className="space-detail-container">
           <div className="space-detail">
             {/* Back to All Spaces Link */}
-            <Link to=".." relative="path">
+            <Link to={`..${search}`} relative="path">
               <FaArrowLeft className="space-detail-faIcon" />
-              <span className="space-detail-backLink">Back to all spaces </span>
+              <span className="space-detail-backLink">
+                {`Back To ${spaceName}`}{" "}
+              </span>
             </Link>
 
             {/* Rest Information */}
