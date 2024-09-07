@@ -14,6 +14,7 @@ import RentOutLayout from "./Components/RentOutLayout";
 import HostSpaceDetailLayout from "./Components/HostSpaceDetailLayout";
 import HostSpacePricing from "./Pages/RentOut/HostSpacePricing";
 import HostSpacePhotos from "./Pages/RentOut/HostSpacePhotos";
+import NotFound from "./Components/NotFound";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="photos" element={<HostSpacePhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

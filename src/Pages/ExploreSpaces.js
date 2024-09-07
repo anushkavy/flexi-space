@@ -1,19 +1,39 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import { getSpaces } from "../api";
 
 export default function ExploreSpaces() {
-  const [spaces, setspaces] = useState([]);
+  const [spaces, setSpaces] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const typeFilter = searchParams.get("type");
   const availabilityFilter = searchParams.get("availability");
 
   useEffect(() => {
-    fetch("/api/spaces")
-      .then((res) => res.json())
-      .then((data) => setspaces(data.spaces));
+    async function loadSpaces() {
+      try {
+        const data = await getSpaces();
+        setSpaces(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadSpaces();
   }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
 
   let displayedSpaces = spaces;
 
@@ -33,7 +53,7 @@ export default function ExploreSpaces() {
     );
   }
 
-  const spaceCard = displayedSpaces.map((space) => {
+  const spaceCard = displayedSpaces?.map((space) => {
     return (
       <Link
         to={space.id}

@@ -365,9 +365,7 @@ i[class*='space-type-'] {
     align-items: flex-start;
     margin: 20px 0 20px 0;
     width: 50%;
-    /* position: absolute;
-    left: 50%; */
-    /* transform: translateX(-50%); */
+    /* row-gap: 10px; */
 }
 
 
@@ -386,7 +384,7 @@ i[class*='space-type-'] {
 }
 
 .space-detail img{
-    width: 100%;
+    width: 80%;
     margin-bottom: 15px;
     border-radius: 5px;
 }
@@ -497,7 +495,7 @@ i[class*='space-type-'] {
     transition: transform .1s ease-in-out;
     background-color: #FF8C38;
     width: 80%;
-    margin-bottom: 15px;
+    margin: 15px 0px;
 }
 
 /* Rent Out Layout */
@@ -621,4 +619,19 @@ i[class*='space-type-'] {
 
 .host-space-detail-info img{
     width: 200px;
+}
+
+/* Not Found Page */
+
+.not-found-container {
+    padding-inline: 30px;
+    margin-top: 30px;
+}
+
+.not-found-container .link-button {
+    width: 30%;
+    background-color: #161616;
+    color: white;
+    margin-top: 30px;
+    font-size: 16px;
 }

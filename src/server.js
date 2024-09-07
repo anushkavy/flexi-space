@@ -1,4 +1,5 @@
 import { createServer, Model } from "miragejs";
+import { Response } from "miragejs";
 
 createServer({
   models: {
@@ -232,11 +233,13 @@ createServer({
     this.logging = false;
 
     this.get("/spaces", (schema, request) => {
+      // return new Response(400, {}, { errors: ["Error fetching data"] });
       return schema.spaces.all();
     });
 
     this.get("/spaces/:id", (schema, request) => {
       const id = request.params.id;
+      // return new Response(400, {}, { errors: ["Error fetching data"] });
       return schema.spaces.find(id);
     });
 
