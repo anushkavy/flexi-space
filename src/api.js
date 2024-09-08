@@ -23,7 +23,5 @@ export async function getSpaceDetail(ParamsId) {
     };
   }
   const data = await res.json();
-  console.log("Debugging space fetch data", data);
-
   return data.spaces;
 }

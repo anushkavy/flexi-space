@@ -28,9 +28,10 @@ export default function SpaceDetail() {
 
   // console.log("Debugging space fetch data", space);
 
-  if (loading) return <h1> Loading...</h1>;
+  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
 
-  if (error) return <h1> Error Occurred: {error.message}</h1>;
+  if (error)
+    return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;
 
   const search = location.state?.search || "";
   const type = location.state?.type || "";

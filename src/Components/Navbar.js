@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -36,6 +37,16 @@ export default function Navbar() {
           }}
         >
           Explore Spaces
+        </NavLink>
+        <NavLink
+          to="login"
+          className={({ isActive }) => {
+            return isActive
+              ? "nav-item nav-btn login-link nav-btn-selected"
+              : "nav-item nav-btn login-link";
+          }}
+        >
+          <FaRegUserCircle />
         </NavLink>
       </div>
     </nav>

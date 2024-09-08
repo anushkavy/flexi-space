@@ -36,6 +36,7 @@ nav{
     font-size: 16px;
     align-items: center;
     text-align: center;
+    justify-content:center;
 }
 
 .nav-item{
@@ -56,6 +57,10 @@ nav{
 
 .nav-btn-selected{
     color: #FF8C38;
+}
+
+.login-link{
+    font-size: 25px;
 }
 
 @media (max-width: 455px) {
@@ -94,7 +99,8 @@ footer{
     position: relative;
     width: 100vw;
     box-sizing: border-box;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    height: 100vh;
 }
 
 .home-content{
@@ -212,6 +218,72 @@ footer{
     }
 }
 
+/* Login Page */
+
+.login-container{
+    /* height: 100vh; */
+    display: flex;
+    margin: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: white;
+    border-radius: 5px;
+}
+
+.login-img{
+    width: 40%;
+    height: auto;
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    min-width: 500px;
+    margin: auto;
+}
+
+.login-content h2{
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 30px;
+    line-height: 110%;
+}
+
+.login-content h4 {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 150%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    align-items: flex-start;
+}
+
+.login-form input{
+    outline: none;
+    width: 80%;
+    min-width: 200px;
+    max-width: 500ps;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #D1D5DB;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.login-form  button{
+    width: 80%;
+    min-width: 200px;
+    max-width: 500ps;
+}
 /* Explore Spaces */
 
 .space-list-container {
@@ -635,3 +707,4 @@ i[class*='space-type-'] {
     margin-top: 30px;
     font-size: 16px;
 }
+
