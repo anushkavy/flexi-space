@@ -221,7 +221,6 @@ footer{
 /* Login Page */
 
 .login-container{
-    /* height: 100vh; */
     display: flex;
     margin: 30px;
     box-sizing: border-box;
@@ -240,8 +239,10 @@ footer{
     flex-direction: column;
     align-items: flex-start;
     width: 40%;
-    min-width: 500px;
+    min-width: 200px;
     margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .login-content h2{
@@ -249,6 +250,12 @@ footer{
     font-size: 40px;
     margin-bottom: 30px;
     line-height: 110%;
+    text-wrap: pretty;
+}
+
+.login-content h2 span{
+    margin-top: 30px;
+    font-weight: 400;
 }
 
 .login-content h4 {
@@ -269,7 +276,7 @@ footer{
 .login-form input{
     outline: none;
     width: 80%;
-    min-width: 200px;
+    min-width: 150px;
     max-width: 500ps;
     margin-bottom: 20px;
     height: 40px;
@@ -281,8 +288,8 @@ footer{
 
 .login-form  button{
     width: 80%;
-    min-width: 200px;
-    max-width: 500ps;
+    min-width: 150px;
+    max-width: 500px;
 }
 /* Explore Spaces */
 

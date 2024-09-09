@@ -1,10 +1,13 @@
 import { useState } from "react";
 import loginImage from "../Images/loginImage.jpg";
+import { useLocation } from "react-router-dom";
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
+
+  const location = useLocation();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -26,7 +29,16 @@ export default function Login() {
         className="login-img"
       />
       <div className="login-content">
-        <h2>Welcome to FlexiSpace</h2>
+        {(location.state?.message || null) === null ? (
+          <h2>Welcome to FlexiSpace</h2>
+        ) : (
+          <h2>
+            {location.state?.message[0]}
+            <br />
+            <span>{location.state?.message[1]}</span>
+          </h2>
+        )}
+
         <h4>Find the perfect setup for your next creation with FlexiSpace.</h4>
 
         <form onSubmit={handleSubmit} className="login-form">
