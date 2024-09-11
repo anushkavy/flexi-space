@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function AuthRequired() {
-  const authenticated = false;
+  const authenticated = localStorage.getItem("loggedIn");
 
   if (!authenticated)
     return (
@@ -13,6 +13,7 @@ export default function AuthRequired() {
             `Log in to keep the creative journey going.`,
           ],
         }}
+        replace
       />
     );
 

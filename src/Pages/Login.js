@@ -1,13 +1,19 @@
 import { useState } from "react";
 import loginImage from "../Images/loginImage.jpg";
 import { useLocation } from "react-router-dom";
+import { loginUser } from "../api";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
-
+  const [formStatus, setFormStatus] = useState("idle");
+  const [error, setError] = useState(null);
+  const [userData, setUserData] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -18,8 +24,25 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(loginFormData);
+    setFormStatus("submitting");
+    async function handleLogin(formData) {
+      try {
+        const data = await loginUser(formData);
+        setUserData(data);
+        setError(null);
+        navigate("/rentOut", { replace: true });
+        localStorage.setItem("loggedIn", true);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setFormStatus("idle");
+      }
+    }
+
+    handleLogin(loginFormData);
   }
+
+  console.log("user data state", userData);
 
   return (
     <div className="login-container">
@@ -56,7 +79,19 @@ export default function Login() {
             value={loginFormData.password}
             onChange={handleChange}
           />
-          <button className="link-button">Log in</button>
+          {error && (
+            <h6 aria-live="assertive" className="error-msg">
+              {error.message}
+            </h6>
+          )}
+          <button
+            className={`link-button ${
+              formStatus === "submitting" ? "btn-disabled" : ""
+            }`}
+            disabled={formStatus === "submitting" ? true : ""}
+          >
+            {formStatus === "submitting" ? "Logging in..." : "Log in"}
+          </button>
         </form>
       </div>
     </div>

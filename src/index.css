@@ -286,10 +286,21 @@ footer{
     box-sizing: border-box;
 }
 
+.error-msg{
+    color: #ed5a4a;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+
 .login-form  button{
     width: 80%;
     min-width: 150px;
     max-width: 500px;
+}
+
+.btn-disabled{
+    opacity: 0.8;
 }
 /* Explore Spaces */
 

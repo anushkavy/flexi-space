@@ -1,16 +1,34 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getHostSpaces } from "../../api";
 
 export default function YourSpaces() {
   const [hostSpaces, setHostSpaces] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/api/rentOut/spaces")
-      .then((res) => res.json())
-      .then((data) => setHostSpaces(data.spaces));
+    async function loadSpaces() {
+      try {
+        const data = await getHostSpaces();
+        setHostSpaces(data);
+      } catch (err) {
+        console.log("Host spaces debug", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadSpaces();
   }, []);
 
-  const spaceCard = hostSpaces.map((space) => {
+  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
+
+  if (error)
+    return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;
+
+  const spaceCard = hostSpaces?.map((space) => {
     return (
       <Link to={space.id} key={space.id} className="host-space-link">
         <div className="host-space-tile">

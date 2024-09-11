@@ -3,7 +3,7 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import { getSpaceDetail } from "../api";
+import { getSpaces } from "../api";
 
 export default function SpaceDetail() {
   const Params = useParams();
@@ -15,7 +15,7 @@ export default function SpaceDetail() {
   useEffect(() => {
     async function loadSpaceDetail() {
       try {
-        const data = await getSpaceDetail(Params.id);
+        const data = await getSpaces(Params.id);
         setSpace(data);
       } catch (err) {
         setError(err);
@@ -25,8 +25,6 @@ export default function SpaceDetail() {
     }
     loadSpaceDetail();
   }, [Params.id]);
-
-  // console.log("Debugging space fetch data", space);
 
   if (loading) return <h1 aria-live="polite"> Loading...</h1>;
 
