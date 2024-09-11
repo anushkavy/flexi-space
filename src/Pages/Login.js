@@ -1,6 +1,6 @@
 import { useState } from "react";
 import loginImage from "../Images/loginImage.jpg";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { loginUser } from "../api";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,11 @@ export default function Login() {
   const [userData, setUserData] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("loggedIn");
+
+  if (isLoggedIn) {
+    return <Navigate to="/rentOut" replace />;
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -30,7 +35,9 @@ export default function Login() {
         const data = await loginUser(formData);
         setUserData(data);
         setError(null);
-        navigate("/rentOut", { replace: true });
+        navigate(location.state?.path ? location.state.path : "/rentOut", {
+          replace: true,
+        });
         localStorage.setItem("loggedIn", true);
       } catch (err) {
         setError(err);
@@ -41,8 +48,6 @@ export default function Login() {
 
     handleLogin(loginFormData);
   }
-
-  console.log("user data state", userData);
 
   return (
     <div className="login-container">

@@ -1,7 +1,8 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 export default function AuthRequired() {
   const authenticated = localStorage.getItem("loggedIn");
+  const location = useLocation();
 
   if (!authenticated)
     return (
@@ -12,6 +13,7 @@ export default function AuthRequired() {
             `Almost there!`,
             `Log in to keep the creative journey going.`,
           ],
+          path: location.pathname,
         }}
         replace
       />
