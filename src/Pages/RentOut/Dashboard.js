@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const userData = JSON.parse(localStorage.getItem("userData")) || null;
-  const userName = userData.user.name;
+  const userName = userData.user?.name;
 
   const hostSpaceData = useOutletContext() || null;
 
@@ -34,7 +34,7 @@ export default function Dashboard() {
   return (
     <div className="dash-container">
       <div className="dash-head">
-        <h1>Welcome Back, {userName}!</h1>
+        <h1>Welcome Back{userName ? `, ${userName}!` : "!"}</h1>
         <div className="dash-head-cards">
           <div className="dash-income dash-head-card">
             <div className="dash-head-detail">
