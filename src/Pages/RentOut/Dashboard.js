@@ -38,8 +38,9 @@ export default function Dashboard() {
         <div className="dash-head-cards">
           <div className="dash-income dash-head-card">
             <div className="dash-head-detail">
-              <h3>
-                Income last <span>30 days</span>
+              <h3 className="dash-income-title">
+                Income last
+                <span className="dash-income-title-span">30 days</span>
               </h3>
               <Link to="income">
                 <h4>Details</h4>
@@ -50,7 +51,7 @@ export default function Dashboard() {
 
           <div className="dash-reviews dash-head-card">
             <div className="dash-head-detail">
-              <h3>Review Score</h3>
+              <h3 className="dash-income-title">Review Score</h3>
               <Link to="reviews">
                 <h4>Details</h4>
               </Link>

@@ -658,13 +658,13 @@ i[class*='space-type-'] {
     font-size: 30px;
 }
 
-.dash-head-detail h3{
+.dash-income-title{
    color: #4D4D4D;
    font-weight: 500;
    font-size: 16px;
 }
 
-.dash-head-detail h3 span{
+.dash-income-title-span{
     font-weight: 700;
     text-decoration: underline;
 }
@@ -712,6 +712,59 @@ i[class*='space-type-'] {
     font-size: 20px;
 }
 
+/* rentOut/ dashboard / income */
+.dash-income-container{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    box-sizing: border-box;
+    margin-top: 35px;
+}
+
+.dash-income-graph{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 48%;
+    min-width: 400px;
+}
+
+.dash-income-graph h2{
+    font-size: 30px;
+}
+.dash-income-transactions{
+    box-sizing: border-box;
+    width: 48%;
+    min-width: 250px;
+}
+.dash-income-transactions h3{
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 20px;
+}
+
+.dash-income-transactions .transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 31px;
+    padding: 30px 23px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.dash-income-transactions .transaction>h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.dash-income-transactions .transaction>p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #4d4d4d;
+}
 
 /* RentOut/ Host-Spaces-Page  */
 
