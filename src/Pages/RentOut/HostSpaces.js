@@ -1,32 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getHostSpaces } from "../../api";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function YourSpaces() {
-  const [hostSpaces, setHostSpaces] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function loadSpaces() {
-      try {
-        const data = await getHostSpaces();
-        setHostSpaces(data);
-      } catch (err) {
-        console.log("Host spaces debug", err);
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadSpaces();
-  }, []);
-
-  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
-
-  if (error)
-    return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;
+  const hostSpaces = useOutletContext() || null;
 
   const spaceCard = hostSpaces?.map((space) => {
     return (
@@ -47,7 +22,7 @@ export default function YourSpaces() {
     );
   });
 
-  return hostSpaces.length > 0 ? (
+  return hostSpaces?.length > 0 ? (
     <div className="space-list-container host-space-list-container">
       <h1>Your Listed Spaces</h1>
       <div className="space-list host-space-list">{spaceCard}</div>

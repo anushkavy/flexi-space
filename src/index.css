@@ -335,7 +335,6 @@ footer{
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-auto-rows: 1fr;
     gap: 15px;
-    justify-content: space-between;
     width: 100%;
 }
 
@@ -619,6 +618,101 @@ i[class*='space-type-'] {
     font-weight: 600;
 }
 
+/* rentOut/ - dashboard */
+.dash-head{
+    background: #FFEAD0;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.dash-head-cards{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 10px;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.dash-head-card{
+    background: white;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dash-head-detail{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-right: 3px;
+}
+
+.dash-head-detail-income{
+    font-size: 30px;
+}
+
+.dash-head-detail h3{
+   color: #4D4D4D;
+   font-weight: 500;
+   font-size: 16px;
+}
+
+.dash-head-detail h3 span{
+    font-weight: 700;
+    text-decoration: underline;
+}
+.dash-head-detail h4 {
+    font-weight: 400;
+   font-size: 14px;
+    text-decoration: underline;
+}
+
+.dash-review-content{
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+}
+
+.dash-star{
+    padding-right: 5px;
+    color: #FFC118;
+    font-size: 20px;
+}
+
+.dash-review-content h5{
+    font-weight: 500;
+}
+
+.dash-review-content span{
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+.dash-spaces-container{
+    padding-inline: 20px;
+    margin: 20px 0;
+}
+
+.dash-spaces-list{
+    align-items: flex-start;
+    padding-inline: 0;
+    
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+#dash-spaces-heading{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
 /* RentOut/ Host-Spaces-Page  */
 
 .host-space-list-container{
@@ -626,8 +720,13 @@ i[class*='space-type-'] {
     margin: 30px 0;
 }
 
+.host-space-list-container h1{
+    margin-right: auto;
+}
+
 .host-space-list{
     margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 }
 
 .host-space-link{
@@ -644,19 +743,20 @@ i[class*='space-type-'] {
     padding: 10px 15px;
     border-radius: 5px;
     background: white;
-    column-gap: 7px;
+    column-gap: 10px;
 }
 
 .host-space-img{
-    width: 100px;
+    width: 125px;
     border-radius: 5px;
 }
 
 .host-space-info{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     row-gap: 7px;
+    padding: 3px 0px;
 }
 
 .host-space-info h3{

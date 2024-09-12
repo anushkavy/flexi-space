@@ -1,5 +1,33 @@
 import { Outlet, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getHostSpaces } from "../api";
+
 export default function RentOutLayout() {
+  const [hostSpaces, setHostSpaces] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function loadSpaces() {
+      try {
+        const data = await getHostSpaces();
+        setHostSpaces(data);
+      } catch (err) {
+        console.log("Host spaces debug", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadSpaces();
+  }, []);
+
+  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
+
+  if (error)
+    return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;
+
   return (
     <div className="rent-out-layout">
       <nav className="rentOut-nav">
@@ -37,7 +65,7 @@ export default function RentOutLayout() {
           Reviews
         </NavLink>
       </nav>
-      <Outlet />
+      <Outlet context={hostSpaces} />
     </div>
   );
 }

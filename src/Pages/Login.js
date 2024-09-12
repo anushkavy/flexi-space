@@ -11,7 +11,6 @@ export default function Login() {
   });
   const [formStatus, setFormStatus] = useState("idle");
   const [error, setError] = useState(null);
-  const [userData, setUserData] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("loggedIn");
@@ -33,7 +32,7 @@ export default function Login() {
     async function handleLogin(formData) {
       try {
         const data = await loginUser(formData);
-        setUserData(data);
+        localStorage.setItem("userData", JSON.stringify(data));
         setError(null);
         navigate(location.state?.path ? location.state.path : "/rentOut", {
           replace: true,
