@@ -5,8 +5,8 @@ import { FaStar } from "react-icons/fa";
 import { UserReviews } from "../../Dataset/UserReviews";
 
 export default function Reviews() {
-  const spaceData = useOutletContext();
-  const reviewData = spaceData.map((space) => {
+  const { hostSpaces, avgRating } = useOutletContext();
+  const reviewData = hostSpaces.map((space) => {
     return space.rating;
   });
 
@@ -16,7 +16,6 @@ export default function Reviews() {
   let count4 = 0;
   let count5 = 0;
   const len = reviewData.length;
-  let sum = 0;
 
   for (let i = 0; i < len; i++) {
     if (reviewData[i] === 5) count5 = count5 + 1;
@@ -24,12 +23,7 @@ export default function Reviews() {
     else if (reviewData[i] === 3) count3 = count3 + 1;
     else if (reviewData[i] === 2) count2 = count2 + 1;
     else count1 = count1 + 1;
-
-    sum = sum + reviewData[i];
   }
-
-  const avgRating = Math.floor((sum / len) * 10) / 10;
-  console.log("Average rating = ", avgRating);
 
   const BorderLinearProgress = styled(LinearProgress)`
     height: 10px;

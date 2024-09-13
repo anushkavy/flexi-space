@@ -1,7 +1,7 @@
 import { Link, useOutletContext } from "react-router-dom";
 
 export default function YourSpaces() {
-  const hostSpaces = useOutletContext() || null;
+  const { hostSpaces } = useOutletContext() || null;
 
   const spaceCard = hostSpaces?.map((space) => {
     return (

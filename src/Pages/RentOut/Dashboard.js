@@ -6,9 +6,9 @@ export default function Dashboard() {
   const userData = JSON.parse(localStorage.getItem("userData")) || null;
   const userName = userData?.user.name;
 
-  const hostSpaceData = useOutletContext() || null;
+  const { hostSpaces, avgRating } = useOutletContext() || null;
 
-  const spaceCard = hostSpaceData?.map((space, index) => {
+  const spaceCard = hostSpaces?.map((space, index) => {
     return index < 3 ? (
       <Link
         to={`spaces/${space.id}`}
@@ -59,7 +59,8 @@ export default function Dashboard() {
             <div className="dash-review-content">
               <FaStar className="dash-star" />
               <h5>
-                <span>5.0</span>/5
+                <span className="dash-review-content-rating">{avgRating}</span>
+                /5
               </h5>
             </div>
           </div>

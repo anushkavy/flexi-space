@@ -690,9 +690,10 @@ i[class*='space-type-'] {
     font-weight: 500;
 }
 
-.dash-review-content span{
-    font-weight: 700;
-    margin-right: 2px;
+.dash-review-content-rating{
+    font-weight: 600;
+    font-size: 23px;
+    margin-right: 3px;
 }
 
 .dash-spaces-container{

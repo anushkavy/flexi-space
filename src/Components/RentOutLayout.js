@@ -23,6 +23,15 @@ export default function RentOutLayout() {
     loadSpaces();
   }, []);
 
+  let sum = 0;
+  const len = hostSpaces.length;
+  const reviewData = hostSpaces.map((space) => {
+    sum = sum + space.rating;
+    return sum;
+  });
+
+  const avgRating = Math.floor((reviewData[len - 1] / len) * 10) / 10;
+
   if (loading) return <h1 aria-live="polite"> Loading...</h1>;
 
   if (error)
@@ -65,7 +74,7 @@ export default function RentOutLayout() {
           Reviews
         </NavLink>
       </nav>
-      <Outlet context={hostSpaces} />
+      <Outlet context={{ hostSpaces, avgRating }} />
     </div>
   );
 }

@@ -55,10 +55,6 @@ export default function Income() {
             },
             marginTop: -10,
           }}
-          highlightedItem={[
-            dataset[dataset.length - 1],
-            dataset[dataset.length - 2],
-          ]}
           leftAxis={{
             disableLine: true,
             disableTicks: true,
