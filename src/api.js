@@ -1,5 +1,5 @@
 import { db, spacesCollectionRef } from "./Firebase";
-import { getDocs, getDoc, doc } from "firebase/firestore/lite";
+import { getDocs, getDoc, doc, query, where } from "firebase/firestore/lite";
 
 export async function getSpaces() {
   const snapshot = await getDocs(spacesCollectionRef);
@@ -34,20 +34,40 @@ export async function getSpace(Id) {
 //   return data.spaces;
 // }
 
-export async function getHostSpaces(Id) {
-  const url = Id ? `/api/rentOut/spaces/${Id}` : "/api/rentOut/spaces";
-  const res = await fetch(url);
-  const throwObject = {
-    message: "There was an error fetching your Spaces.",
-    statusText: res.statusText,
-    status: res.status,
-  };
-  if (!res.ok) {
-    throw throwObject;
-  }
-  const data = await res.json();
-  return data.spaces;
+export async function getHostSpaces(userId) {
+  const q = query(spacesCollectionRef, where("hostId", "==", userId));
+  const snapshot = await getDocs(q);
+  const spaces = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  return spaces;
 }
+
+export async function getHostSpace(userId, Id) {
+  const q = query(spacesCollectionRef, where("hostId", "==", userId));
+
+  const snapshot = await getDocs(q);
+  const spaceArr = snapshot.docs.map(
+    (doc) => doc.id === Id && { ...doc.data(), id: doc.id }
+  );
+
+  const space = spaceArr.filter((sp) => sp !== false);
+
+  return space[0];
+}
+
+// export async function getHostSpaces(Id) {
+//   const url = Id ? `/api/rentOut/spaces/${Id}` : "/api/rentOut/spaces";
+//   const res = await fetch(url);
+//   const throwObject = {
+//     message: "There was an error fetching your Spaces.",
+//     statusText: res.statusText,
+//     status: res.status,
+//   };
+//   if (!res.ok) {
+//     throw throwObject;
+//   }
+//   const data = await res.json();
+//   return data.spaces;
+// }
 
 export async function loginUser(creds) {
   const res = await fetch("/api/login", {

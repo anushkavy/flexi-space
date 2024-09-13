@@ -1,8 +1,15 @@
-import { Outlet, NavLink, useParams, Link } from "react-router-dom";
+import {
+  Outlet,
+  NavLink,
+  useParams,
+  Link,
+  useOutletContext,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import { getHostSpaces } from "../api";
+import { getHostSpace } from "../api";
+import LoadingState from "./LoadingState";
 
 export default function HostSpaceDetailLayout() {
   const { id } = useParams();
@@ -10,11 +17,12 @@ export default function HostSpaceDetailLayout() {
   const [space, setSpace] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { userId } = useOutletContext();
 
   useEffect(() => {
     async function loadSpaceDetail() {
       try {
-        const data = await getHostSpaces(id);
+        const data = await getHostSpace(userId, id);
         setSpace(data);
       } catch (err) {
         setError(err);
@@ -27,7 +35,11 @@ export default function HostSpaceDetailLayout() {
   }, [id]);
 
   if (loading) {
-    return <h1 aria-live="polite"> Loading...</h1>;
+    return (
+      <h1 aria-live="polite">
+        <LoadingState />
+      </h1>
+    );
   }
 
   if (error) {

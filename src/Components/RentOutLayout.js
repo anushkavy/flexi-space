@@ -7,11 +7,13 @@ export default function RentOutLayout() {
   const [hostSpaces, setHostSpaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const userId = userData.user.id;
 
   useEffect(() => {
     async function loadSpaces() {
       try {
-        const data = await getHostSpaces();
+        const data = await getHostSpaces(userId);
         setHostSpaces(data);
       } catch (err) {
         console.log("Host spaces debug", err);
@@ -25,8 +27,8 @@ export default function RentOutLayout() {
   }, []);
 
   let sum = 0;
-  const len = hostSpaces.length;
-  const reviewData = hostSpaces.map((space) => {
+  const len = hostSpaces?.length;
+  const reviewData = hostSpaces?.map((space) => {
     sum = sum + space.rating;
     return sum;
   });
@@ -80,7 +82,7 @@ export default function RentOutLayout() {
           Reviews
         </NavLink>
       </nav>
-      <Outlet context={{ hostSpaces, avgRating }} />
+      <Outlet context={{ hostSpaces, avgRating, userId }} />
     </div>
   );
 }
