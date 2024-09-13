@@ -17,6 +17,14 @@ body{
     filter: grayscale(100%);
 }
 
+.loading-state{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height:70vh;
+}
+
 /* nav */
 
 nav{
@@ -87,6 +95,7 @@ footer{
     padding: 10px;
     flex-shrink: 0;
     margin-top: auto;
+    height: fit-content;
 }
 
 /* Home page */

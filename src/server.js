@@ -239,6 +239,7 @@ createServer({
   routes() {
     this.namespace = "api";
     this.logging = false;
+    this.passthrough("https://firestore.googleapis.com/**");
 
     this.get("/spaces", (schema, request) => {
       // return new Response(400, {}, { errors: ["Error fetching data"] });

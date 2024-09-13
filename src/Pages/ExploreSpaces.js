@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { getSpaces } from "../api";
+import LoadingState from "../Components/LoadingState";
 
 export default function ExploreSpaces() {
   const [spaces, setSpaces] = useState([]);
@@ -28,7 +29,11 @@ export default function ExploreSpaces() {
   }, []);
 
   if (loading) {
-    return <h1 aria-live="polite">Loading...</h1>;
+    return (
+      <h1 aria-live="polite">
+        <LoadingState />
+      </h1>
+    );
   }
 
   if (error) {

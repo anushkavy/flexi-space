@@ -1,6 +1,7 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getHostSpaces } from "../api";
+import LoadingState from "./LoadingState";
 
 export default function RentOutLayout() {
   const [hostSpaces, setHostSpaces] = useState([]);
@@ -32,7 +33,12 @@ export default function RentOutLayout() {
 
   const avgRating = Math.floor((reviewData[len - 1] / len) * 10) / 10;
 
-  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
+  if (loading)
+    return (
+      <h1 aria-live="polite">
+        <LoadingState />
+      </h1>
+    );
 
   if (error)
     return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;

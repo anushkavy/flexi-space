@@ -3,7 +3,8 @@ import { useParams, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import { getSpaces } from "../api";
+import { getSpace } from "../api";
+import LoadingState from "../Components/LoadingState";
 
 export default function SpaceDetail() {
   const Params = useParams();
@@ -15,8 +16,9 @@ export default function SpaceDetail() {
   useEffect(() => {
     async function loadSpaceDetail() {
       try {
-        const data = await getSpaces(Params.id);
+        const data = await getSpace(Params.id);
         setSpace(data);
+        setError(null);
       } catch (err) {
         setError(err);
       } finally {
@@ -26,7 +28,13 @@ export default function SpaceDetail() {
     loadSpaceDetail();
   }, [Params.id]);
 
-  if (loading) return <h1 aria-live="polite"> Loading...</h1>;
+  if (loading)
+    return (
+      <h1 aria-live="polite">
+        {" "}
+        <LoadingState />
+      </h1>
+    );
 
   if (error)
     return <h1 aria-live="assertive"> Error Occurred: {error.message}</h1>;
