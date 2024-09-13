@@ -26,7 +26,7 @@ createServer({
       rules: ["No loud music after 6 PM", "No smoking"],
       parking: "Street parking available",
       accessibility: "Wheelchair accessible",
-      rating: 4.8,
+      rating: 4,
       hostId: "123",
     });
 
@@ -48,7 +48,7 @@ createServer({
       rules: ["No food or drinks"],
       parking: "Private parking lot",
       accessibility: "Not wheelchair accessible",
-      rating: 4.5,
+      rating: 4,
       hostId: "123",
     });
 
@@ -70,7 +70,7 @@ createServer({
       rules: ["Shoes off inside", "No pets"],
       parking: "Street parking only",
       accessibility: "Wheelchair accessible",
-      rating: 4.7,
+      rating: 3,
       hostId: "456",
     });
 
@@ -92,7 +92,7 @@ createServer({
       rules: ["No loud noises", "Leave no trace"],
       parking: "On-site parking available",
       accessibility: "Partially accessible",
-      rating: 4.9,
+      rating: 5,
       hostId: "123",
     });
 
@@ -114,7 +114,7 @@ createServer({
       rules: ["No smoking", "No pets"],
       parking: "Paid garage nearby",
       accessibility: "Wheelchair accessible",
-      rating: 4.8,
+      rating: 5,
       hostId: "123",
     });
 
@@ -136,7 +136,7 @@ createServer({
       rules: ["No painting on walls", "No drilling"],
       parking: "On-site parking available",
       accessibility: "Not wheelchair accessible",
-      rating: 4.6,
+      rating: 2,
       hostId: "789",
     });
 
@@ -158,7 +158,7 @@ createServer({
       rules: ["No glass items", "No fireworks"],
       parking: "Street parking available",
       accessibility: "Not wheelchair accessible",
-      rating: 4.7,
+      rating: 2,
       hostId: "123",
     });
 
@@ -180,7 +180,7 @@ createServer({
       rules: ["Handle books with care", "No food or drinks"],
       parking: "Paid parking nearby",
       accessibility: "Wheelchair accessible",
-      rating: 4.9,
+      rating: 5,
       hostId: "123",
     });
 
@@ -202,7 +202,7 @@ createServer({
       rules: ["Keep noise levels down", "No pets"],
       parking: "On-site parking available",
       accessibility: "Wheelchair accessible",
-      rating: 4.8,
+      rating: 1,
       hostId: "456",
     });
 
@@ -224,7 +224,7 @@ createServer({
       rules: ["No touching the art", "No flash photography"],
       parking: "Street parking available",
       accessibility: "Not wheelchair accessible",
-      rating: 4.7,
+      rating: 4,
       hostId: "123",
     });
 

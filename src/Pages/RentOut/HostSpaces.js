@@ -24,7 +24,7 @@ export default function YourSpaces() {
 
   return hostSpaces?.length > 0 ? (
     <div className="space-list-container host-space-list-container">
-      <h1>Your Listed Spaces</h1>
+      <h2>Your Listed Spaces</h2>
       <div className="space-list host-space-list">{spaceCard}</div>
     </div>
   ) : (
