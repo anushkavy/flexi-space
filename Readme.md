@@ -48,15 +48,6 @@ Make sure you have the following installed on your local machine:
    yarn install
    ```
 
-### ⚙️ Tech Stack
-
-- **Frontend**: [React.js](https://reactjs.org/)
-- **Backend**: [Firebase](https://firebase.google.com/)
-- **Dummy Server**: [MirageJS](https://miragejs.com/)
-- **Deployment**: [Vercel](https://vercel.com/)
-
----
-
 ### Running the App Locally
 
 To start the app on your local machine:
@@ -69,6 +60,15 @@ yarn start
 ````
 
 This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+---
+
+### ⚙️ Tech Stack
+
+- **Frontend**: [React.js](https://reactjs.org/)
+- **Backend**: [Firebase](https://firebase.google.com/)
+- **Dummy Server**: [MirageJS](https://miragejs.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ---
 
