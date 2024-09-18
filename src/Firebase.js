@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore/lite";
 
 const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
-console.log("apikey", apiKey);
+
 const firebaseConfig = {
   apiKey: apiKey,
   authDomain: "flexispace-e9f90.firebaseapp.com",
