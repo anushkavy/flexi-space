@@ -1,11 +1,23 @@
 ````md
 # FlexiSpace
 
-A platform that helps creators find the perfect spots for content creation or allows users to rent out available spots at their place. Built using **React**, **Firebase**, and **MirageJS**, FlexiSpace offers a modern and responsive interface for both content creators and space owners.
+**FlexiSpace** is a platform designed for content creators to find the perfect spots for their work or for individuals to rent out available spaces in their homes or properties. Whether you're shooting videos, taking photos, or just need a creative space to work in, FlexiSpace connects you with the ideal setup.
+Built using **React**, **Firebase**, and **MirageJS**, FlexiSpace offers a modern and responsive interface for both content creators and space owners.
 
-## 🚀 Live Demo
+🔗 **Live Deployment**: [flexi-space.vercel.app](https://flexi-space.vercel.app)
 
-Explore the app live at: [FlexiSpace](https://flexi-space.vercel.app)
+💻 **GitHub Repo**: [github.com/anushkavy/flexi-space](https://github.com/anushkavy/flexi-space)
+
+### App Credentials
+
+Currently, the app has one hardcoded user. You can log in using:
+
+- **Email**: `b@b.com`
+- **Password**: `p123`
+
+### What's Next?
+
+- Upcoming features include the ability for users to sign up with their own credentials.
 
 ---
 
@@ -65,18 +77,34 @@ This will run the app in development mode. Open [http://localhost:3000](http://l
 
 ### ⚙️ Tech Stack
 
-- **Frontend**: [React.js](https://reactjs.org/)
-- **Backend**: [Firebase](https://firebase.google.com/)
-- **Dummy Server**: [MirageJS](https://miragejs.com/)
-- **Deployment**: [Vercel](https://vercel.com/)
+- **[React.js](https://reactjs.org/)**: Frontend framework.
+- **[Firebase](https://firebase.google.com/)**: User authentication and database.
+- **[MirageJS](https://miragejs.com/)**: Dummy server for simulating API responses.
+- **[Vercel](https://vercel.com/)**: For deployment.
 
 ---
 
-## 🛠️ Key Features
+## 🔑 Key Features
 
-- **Rent Out Dashboard**: Manage listed spaces, earnings, transactions, reviews, and more.
-- **Explore Spaces**: Browse through different spaces with filters like availability and furnishing levels (fully furnished, semi-furnished).
-- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Rent Out Dashboard**:  
+  A user-friendly dashboard where you can:
+
+  - Manage your listed spaces.
+  - Track earnings and transactions.
+  - View reviews from content creators who used your space.
+
+- **Explore Spaces Page**:  
+  Explore a variety of spaces using filters such as:
+  - Availability.
+  - Space type (e.g., fully furnished, semi-furnished).
+- **Landing Page**:  
+  Provides an overview of the platform, its services, and user testimonials.
+
+- **Login Page**:  
+  For users to access the platform and manage their bookings or listings.
+
+- **About Page**:  
+  Learn more about the mission and vision behind FlexiSpace.
 
 ---
 
