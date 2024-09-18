@@ -69,8 +69,6 @@ npm start
 yarn start
 ```
 
-````
-
 This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
@@ -149,4 +147,7 @@ If you have any questions, feel free to reach out at [anushkavarshney2708@gmail.
 ---
 
 Happy creating with FlexiSpace! ✨
-````
+
+```
+
+```
