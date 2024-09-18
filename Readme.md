@@ -1,4 +1,3 @@
-````md
 # FlexiSpace
 
 **FlexiSpace** is a platform designed for content creators to find the perfect spots for their work or for individuals to rent out available spaces in their homes or properties. Whether you're shooting videos, taking photos, or just need a creative space to work in, FlexiSpace connects you with the ideal setup.
@@ -69,6 +68,7 @@ npm start
 # or
 yarn start
 ```
+
 ````
 
 This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -86,24 +86,24 @@ This will run the app in development mode. Open [http://localhost:3000](http://l
 
 ## 🔑 Key Features
 
-- **Rent Out Dashboard**:  
+- **Rent Out Dashboard**:
   A user-friendly dashboard where you can:
 
   - Manage your listed spaces.
   - Track earnings and transactions.
   - View reviews from content creators who used your space.
 
-- **Explore Spaces Page**:  
+- **Explore Spaces Page**:
   Explore a variety of spaces using filters such as:
   - Availability.
   - Space type (e.g., fully furnished, semi-furnished).
-- **Landing Page**:  
+- **Landing Page**:
   Provides an overview of the platform, its services, and user testimonials.
 
-- **Login Page**:  
+- **Login Page**:
   For users to access the platform and manage their bookings or listings.
 
-- **About Page**:  
+- **About Page**:
   Learn more about the mission and vision behind FlexiSpace.
 
 ---
@@ -149,3 +149,4 @@ If you have any questions, feel free to reach out at [anushkavarshney2708@gmail.
 ---
 
 Happy creating with FlexiSpace! ✨
+````
